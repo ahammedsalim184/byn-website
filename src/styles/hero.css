@@ -1,0 +1,134 @@
+.hero{
+    min-height: 100vh;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 0 8% 80px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image .8s ease-in-out;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    max-width: 750px;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e5e7eb;
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Shared Button Styles */
+.primary-btn,
+.secondary-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px 35px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+/* Gold Button */
+.primary-btn {
+    background: #C9A227;
+    color: white;
+    border: 2px solid #C9A227;
+}
+
+.primary-btn:hover {
+    background: #A88414;
+    border-color: #A88414;
+    transform: translateY(-3px);
+}
+
+/* Outline Button */
+.secondary-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.secondary-btn:hover {
+    background: white;
+    color: #081F3F;
+    transform: translateY(-3px);
+}
+
+.hero-box{
+    max-width: 880px;
+    padding: 35px 45px;
+
+    background: rgba(8, 25, 48, 0.75);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-left: 6px solid #C9A227;
+
+    border-radius: 8px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,.35);
+
+    margin-top: 220px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .hero {
+        text-align: center;
+        padding: 120px 6% 80px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}

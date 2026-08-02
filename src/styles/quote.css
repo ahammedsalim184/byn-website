@@ -1,0 +1,70 @@
+.quote{
+    padding:100px 8%;
+    background:#F7F8FA;
+}
+
+.quote-form{
+    margin-top:50px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.quote-form input,
+.quote-form textarea{
+    width:100%;
+    padding:16px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:1rem;
+    outline:none;
+}
+
+.quote-form input:focus,
+.quote-form textarea:focus{
+    border-color:#C9A227;
+}
+
+.upload{
+    padding:18px;
+    border:2px dashed #C9A227;
+    border-radius:8px;
+    text-align:center;
+    cursor:pointer;
+    color:#081F3F;
+    font-weight:600;
+}
+
+.upload input{
+    display:none;
+}
+
+.quote-form button{
+    background:#C9A227;
+    color:white;
+    border:none;
+    padding:18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:600;
+    transition:.3s;
+}
+
+.quote-form button:hover{
+    background:#A88414;
+}
+
+@media(max-width:768px){
+
+.row{
+    grid-template-columns:1fr;
+}
+
+}
