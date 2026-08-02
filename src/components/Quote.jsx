@@ -204,10 +204,6 @@ function Quote() {
             onChange={handleChange}
           />
 
-          <label className="upload">
-            {t("quote.form.attachment")}
-            <input type="file" disabled />
-          </label>
 
           <button type="submit" disabled={loading}>
             {loading
