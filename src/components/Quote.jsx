@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../styles/quote.css";
 
 function Quote() {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -15,6 +18,7 @@ function Quote() {
   });
 
   const [loading, setLoading] = useState(false);
+
   const [status, setStatus] = useState({
     type: "",
     message: "",
@@ -47,8 +51,7 @@ function Quote() {
       if (result.success) {
         setStatus({
           type: "success",
-          message:
-            "Thank you! Your quotation request has been submitted successfully. Our sales team will contact you shortly.",
+          message: t("quote.success"),
         });
 
         setFormData({
@@ -73,7 +76,7 @@ function Quote() {
       } else {
         setStatus({
           type: "error",
-          message: result.message || "Unable to send your enquiry.",
+          message: result.message || t("quote.error"),
         });
       }
 
@@ -82,7 +85,7 @@ function Quote() {
 
       setStatus({
         type: "error",
-        message: "Something went wrong. Please try again.",
+        message: t("quote.error"),
       });
     }
 
@@ -93,13 +96,14 @@ function Quote() {
     <section className="quote" id="quote">
       <div className="container">
 
-        <span className="section-tag">REQUEST A QUOTATION</span>
+        <span className="section-tag">
+          {t("quote.tag")}
+        </span>
 
-        <h2>Request a Quote</h2>
+        <h2>{t("quote.title")}</h2>
 
         <p className="section-description">
-          Send us your requirements and our team will prepare a competitive quotation
-          tailored to your project.
+          {t("quote.description")}
         </p>
 
         {status.message && (
@@ -111,10 +115,11 @@ function Quote() {
         <form className="quote-form" onSubmit={handleSubmit}>
 
           <div className="row">
+
             <input
               type="text"
               name="name"
-              placeholder="Full Name"
+              placeholder={t("quote.form.name")}
               value={formData.name}
               onChange={handleChange}
               required
@@ -123,17 +128,19 @@ function Quote() {
             <input
               type="text"
               name="company"
-              placeholder="Company Name"
+              placeholder={t("quote.form.company")}
               value={formData.company}
               onChange={handleChange}
             />
+
           </div>
 
           <div className="row">
+
             <input
               type="email"
               name="email"
-              placeholder="Email Address"
+              placeholder={t("quote.form.email")}
               value={formData.email}
               onChange={handleChange}
               required
@@ -142,17 +149,19 @@ function Quote() {
             <input
               type="tel"
               name="phone"
-              placeholder="Mobile Number"
+              placeholder={t("quote.form.phone")}
               value={formData.phone}
               onChange={handleChange}
             />
+
           </div>
 
           <div className="row">
+
             <input
               type="text"
               name="product"
-              placeholder="Product or Service Required"
+              placeholder={t("quote.form.product")}
               value={formData.product}
               onChange={handleChange}
             />
@@ -160,17 +169,19 @@ function Quote() {
             <input
               type="number"
               name="quantity"
-              placeholder="Quantity"
+              placeholder={t("quote.form.quantity")}
               value={formData.quantity}
               onChange={handleChange}
             />
+
           </div>
 
           <div className="row">
+
             <input
               type="text"
               name="brand"
-              placeholder="Preferred Brand"
+              placeholder={t("quote.form.brand")}
               value={formData.brand}
               onChange={handleChange}
             />
@@ -178,27 +189,30 @@ function Quote() {
             <input
               type="text"
               name="city"
-              placeholder="Delivery City"
+              placeholder={t("quote.form.city")}
               value={formData.city}
               onChange={handleChange}
             />
+
           </div>
 
           <textarea
             rows="5"
             name="notes"
-            placeholder="Specifications / Additional Notes"
+            placeholder={t("quote.form.notes")}
             value={formData.notes}
             onChange={handleChange}
           />
 
           <label className="upload">
-            Attach File (Coming Soon)
+            {t("quote.form.attachment")}
             <input type="file" disabled />
           </label>
 
           <button type="submit" disabled={loading}>
-            {loading ? "Sending Enquiry..." : "Submit Enquiry"}
+            {loading
+              ? t("quote.form.sending")
+              : t("quote.form.submit")}
           </button>
 
         </form>

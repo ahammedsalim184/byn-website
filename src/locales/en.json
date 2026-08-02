@@ -13,5 +13,157 @@
     "description": "BYN Trading and Contracting is your trusted sourcing and supply partner in Riyadh, Saudi Arabia. We provide commercial kitchen equipment, coffee machines, building materials, electrical products, furniture, IT accessories, and much more.",
     "explore": "Explore Products",
     "request": "Request a Quote"
-  }
+  },
+
+  
+  "about": {
+    "tag": "ABOUT BYN",
+    "title": "Your Trusted Trading & Supply Partner",
+    "description1": "BYN Trading and Contracting provides trading, sourcing, distribution, commercial supply, and project support services across Riyadh and Saudi Arabia.",
+    "description2": "We work with reliable suppliers to source quality products, compare specifications, and deliver solutions tailored to our customers' requirements.",
+    "missionTitle": "Our Mission",
+    "mission": "To provide reliable products, equipment, materials, and sourcing solutions that support businesses and projects across Saudi Arabia.",
+    "visionTitle": "Our Vision",
+    "vision": "To become a trusted Saudi trading and supply company known for reliability, quality, commercial value, and long-term business relationships."
+  },
+
+  "products": {
+    "tag": "OUR PRODUCTS",
+    "title": "Products & Business Categories",
+    "description": "We provide reliable sourcing and commercial supply solutions across multiple industries throughout Saudi Arabia.",
+    "learnMore": "Learn More",
+
+    "items": {
+      "kitchen": {
+        "title": "Commercial Kitchen Equipment",
+        "text": "Professional kitchen equipment for restaurants and commercial kitchens."
+      },
+      "coffee": {
+        "title": "Coffee Machines",
+        "text": "Espresso machines, grinders, brewers and complete café equipment."
+      },
+      "building": {
+        "title": "Building Materials",
+        "text": "Construction materials, hardware, plumbing and finishing products."
+      },
+      "electrical": {
+        "title": "Electrical Products",
+        "text": "Cables, switches, lighting, electrical accessories and power equipment."
+      },
+      "it": {
+        "title": "IT Accessories",
+        "text": "Networking equipment, cables, storage devices and office technology."
+      },
+      "industrial": {
+        "title": "Machinery & Industrial Equipment",
+        "text": "Industrial machinery, pumps, compressors and workshop equipment."
+      }
+    }
+
+
+  },
+
+
+  
+  "industries": {
+    "tag": "INDUSTRIES",
+    "title": "Industries We Serve",
+    "description": "We proudly support businesses and projects across Saudi Arabia with reliable sourcing, supply, and contracting solutions.",
+
+    "items": {
+      "hotel": "Hotels & Hospitality",
+      "restaurant": "Restaurants & Cafés",
+      "construction": "Construction Companies",
+      "office": "Commercial Offices",
+      "industrial": "Industrial Facilities",
+      "warehouse": "Warehouses & Retail"
+    }
+  },
+
+    
+    "why": {
+      "tag": "WHY CHOOSE US",
+      "title": "Why Choose BYN Trading & Contracting?",
+      "description": "We deliver reliable sourcing, trusted partnerships and commercial solutions that help businesses succeed.",
+
+      "items": {
+        "supply": {
+          "title": "Multi-Category Supply",
+          "text": "Source commercial equipment, machinery, electrical products, furniture and more from one trusted partner."
+        },
+        "sourcing": {
+          "title": "Reliable Sourcing",
+          "text": "We work with dependable suppliers to deliver quality products that match your specifications."
+        },
+        "pricing": {
+          "title": "Competitive Pricing",
+          "text": "We compare suppliers and quotations to provide the best commercial value."
+        },
+        "communication": {
+          "title": "Clear Communication",
+          "text": "Fast responses, transparent quotations and regular supply updates."
+        },
+        "flexible": {
+          "title": "Flexible Solutions",
+          "text": "Supporting one-time purchases, wholesale orders and project procurement."
+        },
+        "coverage": {
+          "title": "Saudi Arabia Coverage",
+          "text": "Based in Riyadh and serving businesses across the Kingdom."
+        }
+      }
+    },
+
+    "contact": {
+      "tag": "CONTACT US",
+      "title": "Get in Touch",
+      "description": "Contact BYN Trading & Contracting for product enquiries, quotations, project requirements and business partnerships.",
+      "phone": "Phone",
+      "email": "Email",
+      "location": "Location",
+      "locationValue": "Riyadh, Saudi Arabia",
+      "success": "Your enquiry has been sent successfully.",
+      "error": "Something went wrong.",
+      "form": {
+        "name": "Full Name",
+        "company": "Company Name",
+        "email": "Email Address",
+        "phone": "Mobile Number",
+        "product": "Product or Service Required",
+        "message": "Tell us about your requirements...",
+        "submit": "Send Enquiry",
+        "sending": "Sending..."
+      }
+    },
+
+    "quote": {
+      "tag": "REQUEST A QUOTATION",
+      "title": "Request a Quote",
+      "description": "Send us your requirements and our team will prepare a competitive quotation tailored to your project.",
+
+      "success": "Thank you! Your quotation request has been submitted successfully. Our sales team will contact you shortly.",
+      "error": "Something went wrong. Please try again.",
+
+      "form": {
+        "name": "Full Name",
+        "company": "Company Name",
+        "email": "Email Address",
+        "phone": "Mobile Number",
+        "product": "Product or Service Required",
+        "quantity": "Quantity",
+        "brand": "Preferred Brand",
+        "city": "Delivery City",
+        "notes": "Specifications / Additional Notes",
+        "attachment": "Attach File (Coming Soon)",
+        "submit": "Submit Enquiry",
+        "sending": "Sending Enquiry..."
+      }
+    }
+
+
+
+
+
+
+
 }

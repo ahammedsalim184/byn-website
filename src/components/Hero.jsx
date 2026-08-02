@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../styles/hero.css";
 
 import hero1 from "../assets/images/hero1.jpg";
@@ -8,6 +9,7 @@ import hero1 from "../assets/images/hero1.jpg";
 function Hero() {
   const images = [hero1];
   const [currentImage, setCurrentImage] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,22 +29,17 @@ function Hero() {
     >
       <div className="hero-content">
         <div className="hero-box">
-          <h1>Trading, Contracting & Commercial Supply Solutions</h1>
+          <h1>{t("hero.title")}</h1>
 
-          <p>
-            BYN Trading and Contracting is your trusted sourcing and supply
-            partner in Riyadh, Saudi Arabia. We provide commercial kitchen
-            equipments, coffee machines, building materials, electrical products,
-            furnitures, IT accessories, and much more.
-          </p>
+          <p>{t("hero.description")}</p>
 
           <div className="hero-buttons">
             <a href="#products" className="primary-btn">
-              Explore Products
+              {t("hero.explore")}
             </a>
 
             <a href="#quote" className="secondary-btn">
-              Request a Quote
+              {t("hero.request")}
             </a>
           </div>
         </div>

@@ -1,6 +1,9 @@
 import "../styles/about.css";
+import { useTranslation } from "react-i18next";
 
 function About() {
+  const { t } = useTranslation();
+
   return (
     <section className="about" id="about">
       <div className="about-container">
@@ -13,40 +16,29 @@ function About() {
         </div>
 
         <div className="about-content">
-          <span className="section-tag">ABOUT BYN</span>
 
-          <h2>Your Trusted Trading & Supply Partner</h2>
+          <span className="section-tag">
+            {t("about.tag")}
+          </span>
 
-          <p>
-            BYN Trading and Contracting provides trading, sourcing,
-            distribution, commercial supply, and project-support services
-            across Riyadh and Saudi Arabia.
-          </p>
+          <h2>{t("about.title")}</h2>
 
-          <p>
-            We work with reliable suppliers to source quality products,
-            compare specifications, and deliver solutions tailored to our
-            customers' requirements.
-          </p>
+          <p>{t("about.description1")}</p>
+
+          <p>{t("about.description2")}</p>
 
           <div className="mission-vision">
 
             <div className="card">
-              <h3>Our Mission</h3>
-              <p>
-                To provide reliable products, equipment, materials, and
-                sourcing solutions that support businesses and projects
-                across Saudi Arabia.
-              </p>
+              <h3>{t("about.missionTitle")}</h3>
+
+              <p>{t("about.mission")}</p>
             </div>
 
             <div className="card">
-              <h3>Our Vision</h3>
-              <p>
-                To become a trusted Saudi trading and supply company known
-                for reliability, quality, commercial value, and long-term
-                business relationships.
-              </p>
+              <h3>{t("about.visionTitle")}</h3>
+
+              <p>{t("about.vision")}</p>
             </div>
 
           </div>

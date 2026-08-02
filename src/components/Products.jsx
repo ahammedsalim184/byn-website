@@ -1,4 +1,5 @@
 import "../styles/products.css";
+import { useTranslation } from "react-i18next";
 
 import {
   FaUtensils,
@@ -11,54 +12,57 @@ import {
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
 
+import "swiper/css";
 import "swiper/css/pagination";
 
 function Products() {
+  const { t } = useTranslation();
+
   const products = [
     {
       icon: <FaUtensils />,
-      title: "Commercial Kitchen Equipment",
-      text: "Professional kitchen equipment for restaurants and commercial kitchens.",
+      title: t("products.items.kitchen.title"),
+      text: t("products.items.kitchen.text"),
     },
     {
       icon: <FaCoffee />,
-      title: "Coffee Machines",
-      text: "Espresso machines, grinders, brewers and complete café equipment.",
+      title: t("products.items.coffee.title"),
+      text: t("products.items.coffee.text"),
     },
     {
       icon: <FaBuilding />,
-      title: "Building Materials",
-      text: "Construction materials, hardware, plumbing and finishing products.",
+      title: t("products.items.building.title"),
+      text: t("products.items.building.text"),
     },
     {
       icon: <FaBolt />,
-      title: "Electrical Products",
-      text: "Cables, switches, lighting, electrical accessories and power equipment.",
+      title: t("products.items.electrical.title"),
+      text: t("products.items.electrical.text"),
     },
     {
       icon: <FaDesktop />,
-      title: "IT Accessories",
-      text: "Networking equipment, cables, storage devices and office technology.",
+      title: t("products.items.it.title"),
+      text: t("products.items.it.text"),
     },
     {
       icon: <FaCogs />,
-      title: "Machinery & Industrial Equipment",
-      text: "Industrial machinery, pumps, compressors and workshop equipment.",
+      title: t("products.items.industrial.title"),
+      text: t("products.items.industrial.text"),
     },
   ];
 
   return (
     <section className="products" id="products">
       <div className="container">
-        <span className="section-tag">OUR PRODUCTS</span>
+        <span className="section-tag">
+          {t("products.tag")}
+        </span>
 
-        <h2>Products & Business Categories</h2>
+        <h2>{t("products.title")}</h2>
 
         <p className="section-description">
-          We provide reliable sourcing and commercial supply solutions across
-          multiple industries throughout Saudi Arabia.
+          {t("products.description")}
         </p>
 
         <Swiper
@@ -88,19 +92,24 @@ function Products() {
           {products.map((product, index) => (
             <SwiperSlide key={index}>
               <div className="product-card">
-                <div className="icon">{product.icon}</div>
+
+                <div className="icon">
+                  {product.icon}
+                </div>
 
                 <h3>{product.title}</h3>
 
                 <p>{product.text}</p>
 
                 <a href="#quote" className="learn-btn">
-                  Learn More →
+                  {t("products.learnMore")} →
                 </a>
+
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
+
       </div>
     </section>
   );

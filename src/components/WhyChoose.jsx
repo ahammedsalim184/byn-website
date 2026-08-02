@@ -1,4 +1,6 @@
 import "../styles/whychoose.css";
+import { useTranslation } from "react-i18next";
+
 import {
   FaBoxes,
   FaHandshake,
@@ -9,36 +11,38 @@ import {
 } from "react-icons/fa";
 
 function WhyChoose() {
+  const { t } = useTranslation();
+
   const features = [
     {
       icon: <FaBoxes />,
-      title: "Multi-Category Supply",
-      text: "Source commercial equipment, machinery, electrical products, furniture and more from one trusted partner.",
+      title: t("why.items.supply.title"),
+      text: t("why.items.supply.text"),
     },
     {
       icon: <FaHandshake />,
-      title: "Reliable Sourcing",
-      text: "We work with dependable suppliers to deliver quality products that match your specifications.",
+      title: t("why.items.sourcing.title"),
+      text: t("why.items.sourcing.text"),
     },
     {
       icon: <FaMoneyCheckAlt />,
-      title: "Competitive Pricing",
-      text: "We compare suppliers and quotations to provide the best commercial value.",
+      title: t("why.items.pricing.title"),
+      text: t("why.items.pricing.text"),
     },
     {
       icon: <FaComments />,
-      title: "Clear Communication",
-      text: "Fast responses, transparent quotations and regular supply updates.",
+      title: t("why.items.communication.title"),
+      text: t("why.items.communication.text"),
     },
     {
       icon: <FaTools />,
-      title: "Flexible Solutions",
-      text: "Supporting one-time purchases, wholesale orders and project procurement.",
+      title: t("why.items.flexible.title"),
+      text: t("why.items.flexible.text"),
     },
     {
       icon: <FaMapMarkerAlt />,
-      title: "Saudi Arabia Coverage",
-      text: "Based in Riyadh and serving businesses across the Kingdom.",
+      title: t("why.items.coverage.title"),
+      text: t("why.items.coverage.text"),
     },
   ];
 
@@ -46,22 +50,28 @@ function WhyChoose() {
     <section className="why" id="why">
       <div className="container">
 
+        <span className="section-tag">
+          {t("why.tag")}
+        </span>
 
-        <h2>Why Choose BYN Trading & Contracting?</h2>
+        <h2>{t("why.title")}</h2>
 
         <p className="section-description">
-          We deliver reliable sourcing, trusted partnerships and commercial
-          solutions that help businesses succeed.
+          {t("why.description")}
         </p>
 
         <div className="why-grid">
           {features.map((item, index) => (
             <div className="why-card" key={index}>
-              <div className="why-icon">{item.icon}</div>
+
+              <div className="why-icon">
+                {item.icon}
+              </div>
 
               <h3>{item.title}</h3>
 
               <p>{item.text}</p>
+
             </div>
           ))}
         </div>

@@ -1,8 +1,11 @@
 import { useState } from "react";
 import "../styles/contact.css";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function Contact() {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -38,7 +41,7 @@ function Contact() {
       const result = await response.json();
 
       if (result.success) {
-        alert("Your enquiry has been sent successfully.");
+        alert(t("contact.success"));
 
         setFormData({
           name: "",
@@ -53,7 +56,7 @@ function Contact() {
       }
     } catch (err) {
       console.error(err);
-      alert("Something went wrong.");
+      alert(t("contact.error"));
     }
 
     setLoading(false);
@@ -63,13 +66,14 @@ function Contact() {
     <section className="contact" id="contact">
       <div className="container">
 
-        <span className="section-tag">CONTACT US</span>
+        <span className="section-tag">
+          {t("contact.tag")}
+        </span>
 
-        <h2>Get in Touch</h2>
+        <h2>{t("contact.title")}</h2>
 
         <p className="section-description">
-          Contact BYN Trading & Contracting for product enquiries,
-          quotations, project requirements and business partnerships.
+          {t("contact.description")}
         </p>
 
         <div className="contact-wrapper">
@@ -79,7 +83,7 @@ function Contact() {
             <div className="info-box">
               <FaPhoneAlt className="info-icon" />
               <div>
-                <h3>Phone</h3>
+                <h3>{t("contact.phone")}</h3>
                 <p>+966 XX XXX XXXX</p>
               </div>
             </div>
@@ -87,7 +91,7 @@ function Contact() {
             <div className="info-box">
               <FaEnvelope className="info-icon" />
               <div>
-                <h3>Email</h3>
+                <h3>{t("contact.email")}</h3>
                 <p>sales@byntrading.com</p>
               </div>
             </div>
@@ -95,8 +99,8 @@ function Contact() {
             <div className="info-box">
               <FaMapMarkerAlt className="info-icon" />
               <div>
-                <h3>Location</h3>
-                <p>Riyadh, Saudi Arabia</p>
+                <h3>{t("contact.location")}</h3>
+                <p>{t("contact.locationValue")}</p>
               </div>
             </div>
 
@@ -107,7 +111,7 @@ function Contact() {
             <input
               type="text"
               name="name"
-              placeholder="Full Name"
+              placeholder={t("contact.form.name")}
               value={formData.name}
               onChange={handleChange}
               required
@@ -116,7 +120,7 @@ function Contact() {
             <input
               type="text"
               name="company"
-              placeholder="Company Name"
+              placeholder={t("contact.form.company")}
               value={formData.company}
               onChange={handleChange}
             />
@@ -124,7 +128,7 @@ function Contact() {
             <input
               type="email"
               name="email"
-              placeholder="Email Address"
+              placeholder={t("contact.form.email")}
               value={formData.email}
               onChange={handleChange}
               required
@@ -133,7 +137,7 @@ function Contact() {
             <input
               type="tel"
               name="phone"
-              placeholder="Mobile Number"
+              placeholder={t("contact.form.phone")}
               value={formData.phone}
               onChange={handleChange}
             />
@@ -141,7 +145,7 @@ function Contact() {
             <input
               type="text"
               name="product"
-              placeholder="Product or Service Required"
+              placeholder={t("contact.form.product")}
               value={formData.product}
               onChange={handleChange}
             />
@@ -149,14 +153,16 @@ function Contact() {
             <textarea
               rows="6"
               name="message"
-              placeholder="Tell us about your requirements..."
+              placeholder={t("contact.form.message")}
               value={formData.message}
               onChange={handleChange}
               required
             />
 
             <button type="submit" disabled={loading}>
-              {loading ? "Sending..." : "Send Enquiry"}
+              {loading
+                ? t("contact.form.sending")
+                : t("contact.form.submit")}
             </button>
 
           </form>

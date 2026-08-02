@@ -16,6 +16,8 @@ function Navbar() {
 
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
+    localStorage.setItem("language", lang);
+    setMenuOpen(false);
   };
 
   return (

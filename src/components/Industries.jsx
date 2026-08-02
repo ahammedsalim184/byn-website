@@ -1,4 +1,6 @@
 import "../styles/industries.css";
+import { useTranslation } from "react-i18next";
+
 import {
   FaHotel,
   FaStore,
@@ -9,30 +11,32 @@ import {
 } from "react-icons/fa";
 
 function Industries() {
+  const { t } = useTranslation();
+
   const industries = [
     {
       icon: <FaHotel />,
-      title: "Hotels & Hospitality",
+      title: t("industries.items.hotel"),
     },
     {
       icon: <FaStore />,
-      title: "Restaurants & Cafés",
+      title: t("industries.items.restaurant"),
     },
     {
       icon: <FaHardHat />,
-      title: "Construction Companies",
+      title: t("industries.items.construction"),
     },
     {
       icon: <FaBuilding />,
-      title: "Commercial Offices",
+      title: t("industries.items.office"),
     },
     {
       icon: <FaIndustry />,
-      title: "Industrial Facilities",
+      title: t("industries.items.industrial"),
     },
     {
       icon: <FaWarehouse />,
-      title: "Warehouses & Retail",
+      title: t("industries.items.warehouse"),
     },
   ];
 
@@ -40,13 +44,14 @@ function Industries() {
     <section className="industries" id="industries">
       <div className="container">
 
-        <span className="section-tag">INDUSTRIES</span>
+        <span className="section-tag">
+          {t("industries.tag")}
+        </span>
 
-        <h2>Industries We Serve</h2>
+        <h2>{t("industries.title")}</h2>
 
         <p className="section-description">
-          We proudly support businesses and projects across Saudi Arabia with
-          reliable sourcing, supply, and contracting solutions.
+          {t("industries.description")}
         </p>
 
         <div className="industry-grid">
@@ -55,6 +60,7 @@ function Industries() {
               <div className="industry-icon" aria-hidden="true">
                 {item.icon}
               </div>
+
               <h3>{item.title}</h3>
             </div>
           ))}
