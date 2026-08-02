@@ -1,0 +1,17 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "industries": "Industries",
+    "contact": "Contact",
+    "quote": "Request a Quote"
+  },
+
+  "hero": {
+    "title": "Trading, Contracting & Commercial Supply Solutions",
+    "description": "BYN Trading and Contracting is your trusted sourcing and supply partner in Riyadh, Saudi Arabia. We provide commercial kitchen equipment, coffee machines, building materials, electrical products, furniture, IT accessories, and much more.",
+    "explore": "Explore Products",
+    "request": "Request a Quote"
+  }
+}

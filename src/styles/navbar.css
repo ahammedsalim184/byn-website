@@ -35,7 +35,53 @@ nav a {
     border-radius: 12px;
 }
 
-/* Quote button */
+/* ===========================
+   RIGHT SIDE
+=========================== */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ===========================
+   LANGUAGE SWITCHER
+=========================== */
+
+.language-switcher {
+    display: flex;
+    gap: 8px;
+}
+
+.language-switcher button,
+.mobile-language button {
+    background: transparent;
+    border: 1px solid #C9A227;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: .9rem;
+    transition: .3s;
+}
+
+.language-switcher button:hover,
+.language-switcher button.active,
+.mobile-language button:hover,
+.mobile-language button.active {
+    background: #C9A227;
+    color: #081F3F;
+}
+
+.mobile-language {
+    display: none;
+}
+
+/* ===========================
+   QUOTE BUTTON
+=========================== */
+
 .quote-btn {
     background: #C9A227;
     color: white;
@@ -50,7 +96,10 @@ nav a {
     background: #A88414;
 }
 
-/* Mobile menu button */
+/* ===========================
+   MOBILE MENU BUTTON
+=========================== */
+
 .menu-toggle {
     display: none;
     background: transparent;
@@ -60,8 +109,10 @@ nav a {
     cursor: pointer;
 }
 
+/* ===========================
+   MOBILE
+=========================== */
 
-/* Mobile */
 @media (max-width: 900px) {
 
     nav {
@@ -73,11 +124,9 @@ nav a {
         width: 50px;
     }
 
-
     .menu-toggle {
         display: block;
     }
-
 
     nav ul {
         position: absolute;
@@ -96,20 +145,29 @@ nav a {
         transition: .3s ease;
     }
 
-
     nav ul.active {
         transform: translateY(0);
     }
 
+    .language-switcher {
+        display: none;
+    }
+
+    .mobile-language {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
 
     .quote-btn {
         display: none;
     }
-
 }
 
+/* ===========================
+   SMALL PHONES
+=========================== */
 
-/* Small phones */
 @media (max-width: 450px) {
 
     nav {
