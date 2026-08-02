@@ -1,5 +1,6 @@
 import "../styles/about.css";
 import { useTranslation } from "react-i18next";
+import aboutImage from "../assets/images/espresso.webp";
 
 function About() {
   const { t } = useTranslation();
@@ -10,8 +11,8 @@ function About() {
 
         <div className="about-image">
           <img
-            src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop"
-            alt="Warehouse and Commercial Supply"
+            src={aboutImage}
+            alt="BYN Commercial Supply Solutions"
           />
         </div>
 
