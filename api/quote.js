@@ -73,7 +73,7 @@ export default async function handler(req, res) {
 
             </div>
 
-            <div style="padding:35px;">
+            <div style="padding:35px;color:#222222;background:#ffffff;">
 
                 <table style="width:100%;border-collapse:collapse;">
 
