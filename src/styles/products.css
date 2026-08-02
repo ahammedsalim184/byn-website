@@ -122,3 +122,91 @@
     background: #A88414;
     transform: translateX(5px);
 }
+
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 900px) {
+
+    .products {
+        padding: 80px 6%;
+    }
+
+    .products h2 {
+        font-size: 2.2rem;
+    }
+
+    .section-description {
+        margin-bottom: 35px;
+    }
+
+    .product-card {
+        padding: 30px;
+    }
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 600px) {
+
+    .products {
+        padding: 60px 5%;
+    }
+
+
+    .products h2 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+
+    .section-description {
+        font-size: .95rem;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+
+    .products-slider {
+        margin-top: 25px;
+        padding: 5px 5px 50px;
+    }
+
+
+    .product-card {
+        padding: 25px 20px;
+        border-radius: 14px;
+    }
+
+
+    .icon {
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+
+    .product-card h3 {
+        font-size: 1.2rem;
+    }
+
+
+    .product-card p {
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+
+
+    .learn-btn {
+        padding: 11px 18px;
+        font-size: .9rem;
+    }
+
+}

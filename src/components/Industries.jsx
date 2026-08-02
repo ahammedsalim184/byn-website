@@ -50,9 +50,11 @@ function Industries() {
         </p>
 
         <div className="industry-grid">
-          {industries.map((item, index) => (
-            <div className="industry-card" key={index}>
-              <div className="industry-icon">{item.icon}</div>
+          {industries.map((item) => (
+            <div className="industry-card" key={item.title}>
+              <div className="industry-icon" aria-hidden="true">
+                {item.icon}
+              </div>
               <h3>{item.title}</h3>
             </div>
           ))}

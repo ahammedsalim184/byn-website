@@ -107,9 +107,16 @@
 @media (max-width: 768px) {
 
     .hero {
+        min-height: 100svh;
+        align-items: center;
+
         text-align: center;
-        padding: 120px 6% 80px;
+
+        padding: 100px 5% 50px;
+
+        background-position: center;
     }
+
 
     .hero-content {
         display: flex;
@@ -117,18 +124,65 @@
         align-items: center;
     }
 
+
+    .hero-box {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 25px 20px;
+
+        margin-top: 40px;
+
+        border-left: none;
+        border-top: 5px solid #C9A227;
+
+        background: rgba(8, 25, 48, 0.82);
+    }
+
+
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.25;
+
+        margin-bottom: 20px;
+    }
+
+
+    .hero p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+
+        margin-bottom: 30px;
+    }
+
+
     .hero-buttons {
         flex-direction: column;
+
         width: 100%;
-        max-width: 320px;
+        gap: 15px;
     }
+
 
     .primary-btn,
     .secondary-btn {
         width: 100%;
+        padding: 14px 20px;
     }
 
-    .hero p {
-        font-size: 1rem;
+}
+
+
+/* Extra small phones */
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 1.7rem;
     }
+
+
+    .hero-box {
+        padding: 20px 15px;
+    }
+
 }

@@ -67,10 +67,13 @@
     margin: 0;
 }
 
+
+/* Tablet */
 @media (max-width: 900px) {
 
     .about-container {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .mission-vision {
@@ -80,4 +83,58 @@
     .about-content h2 {
         font-size: 2rem;
     }
+
+}
+
+
+/* Mobile phones */
+@media (max-width: 600px) {
+
+    .about {
+        padding: 60px 5%;
+    }
+
+
+    .section-tag {
+        font-size: .8rem;
+    }
+
+
+    .about-content h2 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+
+    .about-content p {
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+
+
+    .about-image img {
+        border-radius: 12px;
+    }
+
+
+    .mission-vision {
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+
+    .card {
+        padding: 20px;
+    }
+
+
+    .card h3 {
+        font-size: 1.15rem;
+    }
+
+
+    .card p {
+        font-size: .9rem;
+    }
+
 }
