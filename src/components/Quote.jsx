@@ -15,6 +15,10 @@ function Quote() {
   });
 
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState({
+    type: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
     setFormData({
@@ -27,6 +31,7 @@ function Quote() {
     e.preventDefault();
 
     setLoading(true);
+    setStatus({ type: "", message: "" });
 
     try {
       const response = await fetch("/api/quote", {
@@ -40,7 +45,11 @@ function Quote() {
       const result = await response.json();
 
       if (result.success) {
-        alert("Your enquiry has been sent successfully.");
+        setStatus({
+          type: "success",
+          message:
+            "Thank you! Your quotation request has been submitted successfully. Our sales team will contact you shortly.",
+        });
 
         setFormData({
           name: "",
@@ -53,12 +62,28 @@ function Quote() {
           city: "",
           notes: "",
         });
+
+        setTimeout(() => {
+          setStatus({
+            type: "",
+            message: "",
+          });
+        }, 6000);
+
       } else {
-        alert(result.message || "Unable to send enquiry.");
+        setStatus({
+          type: "error",
+          message: result.message || "Unable to send your enquiry.",
+        });
       }
+
     } catch (err) {
       console.error(err);
-      alert("Something went wrong. Please try again.");
+
+      setStatus({
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
     }
 
     setLoading(false);
@@ -76,6 +101,12 @@ function Quote() {
           Send us your requirements and our team will prepare a competitive quotation
           tailored to your project.
         </p>
+
+        {status.message && (
+          <div className={`quote-message ${status.type}`}>
+            {status.message}
+          </div>
+        )}
 
         <form className="quote-form" onSubmit={handleSubmit}>
 
@@ -167,7 +198,7 @@ function Quote() {
           </label>
 
           <button type="submit" disabled={loading}>
-            {loading ? "Sending..." : "Submit Enquiry"}
+            {loading ? "Sending Enquiry..." : "Submit Enquiry"}
           </button>
 
         </form>
