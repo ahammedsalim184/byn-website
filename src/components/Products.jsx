@@ -11,13 +11,15 @@ import {
 } from "react-icons/fa";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
 function Products() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const isRTL = i18n.language === "ar";
 
   const products = [
     {
@@ -66,15 +68,12 @@ function Products() {
         </p>
 
         <Swiper
-          modules={[Pagination, Autoplay]}
+          key={i18n.language}
+          dir={isRTL ? "rtl" : "ltr"}
+          modules={[Pagination]}
           spaceBetween={30}
           grabCursor={true}
           pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3500,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
           loop={true}
           breakpoints={{
             0: {
@@ -92,7 +91,6 @@ function Products() {
           {products.map((product, index) => (
             <SwiperSlide key={index}>
               <div className="product-card">
-
                 <div className="icon">
                   {product.icon}
                 </div>
@@ -104,12 +102,10 @@ function Products() {
                 <a href="#quote" className="learn-btn">
                   {t("products.learnMore")} →
                 </a>
-
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-
       </div>
     </section>
   );
